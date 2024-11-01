@@ -1,0 +1,23 @@
+sort1 uses: Bubble Sort
+
+How do you know?: In all sorted files, sort 1 are much faster than
+both of the sorts. Since the the best case of Bubble sort is Ω(n), it
+should be faster than Merge Sort and Selection sort if the data is already
+sorted.
+
+sort2 uses: Merge Sort
+
+How do you know?: In all of the txt files, sort 2 is the most consistent
+with time, it never took more than 1 second to sort all of them.
+In random50000 and reversed50000, sort 2 didn't even take
+a second to sort them all out while the others took 2-4 seconds. This
+just proves that the worst case and best case of Merge Sort is n log n.
+
+sort3 uses: Selection Sort
+
+How do you know?: Sort 3 is very slow compared to the other two.
+While sort 1 is close or slower in some cases, I noticed that
+even in the sorted files, sort 3 is still slow. This shows
+the difference between sort 1 and sort 3 since they are very similar.
+It proves that whenever it's sorted or not, it's time is still not efficient.
+Its consistency shows the best case and worst case of it is on n^2.
