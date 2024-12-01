@@ -1,0 +1,11 @@
+If songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?
+    - The higher their audio aura the more they would be characterized as a happy/joyful listener. If their
+    average is in the lower bound of the range (0-1), it would mean they like to listen to songs who gives more of
+    a melancholy vibes.
+
+
+Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener.
+What better ways of calculating this aura would you propose?
+    - Add one more factor. Calculate how much the listeners listens to multiple genres. If they listen to
+    a lot of genres, it would mean their audio aura is innaccurate. Listening to a lot of genres just means
+    that they like different kinds of songs and likes to explore different kind of musics.
