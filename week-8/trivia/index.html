@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Who was the seventh president of the Philippines?</h3>
+                <p id="p1-status"></p>
+                <button class="p1-btn incorrect">Carlos P Garcia</button>
+                <button class="p1-btn incorrect">Elpidio Quirino</button>
+                <button class="p1-btn incorrect">Fidel V Ramos</button>
+                <button class="p1-btn "id="correct">Ramon Magsaysay</button>
+                <button class="p1-btn incorrect">Ferdinand Marcos</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>Who starred in the American TV show House?</h3>
+                <p id="p2-status"></p>
+                <form>
+                    <input type="text" name="name" id="name" placeholder="e.g John Doe" required>
+                    <button id="form-btn">Check Answer</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            const allPartOneBtn = document.querySelectorAll(".p1-btn");
+            const wrongBtn = document.querySelectorAll(".incorrect");
+            const rightBtn = document.querySelector('#correct');
+            const form = document.querySelector('form');
+            let name = document.getElementById("name");
+            let partOneAnswer = document.getElementById("p1-status");
+            let partTwoAnswer = document.getElementById("p2-status");
+
+            rightBtn.addEventListener('click', function(e) {
+                let current = e.target;
+                resetBtnColor();
+                current.style.backgroundColor = "#00C000";
+                current.style.color = "#FFF";
+                partOneAnswer.innerHTML = "Correct!";
+            });
+
+            for (let wrong of wrongBtn) {
+                wrong.addEventListener('click', function(e) {
+                    let current = e.target;
+                    resetBtnColor();
+                    current.style.backgroundColor = "#C70039";
+                    current.style.color = "#FFF";
+                    partOneAnswer.innerHTML = "Incorrect!";
+                });
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                let answer = name.value.toUpperCase();
+                if (answer === "HUGH LAURIE") {
+                    name.style.backgroundColor = "#00C000";
+                    name.style.color = "#FFF";
+                    partTwoAnswer.innerHTML = "Correct!"
+                } else {
+                    name.style.backgroundColor = "#C70039";
+                    name.style.color = "#FFF";
+                    partTwoAnswer.innerHTML = "Wrong!";
+                }
+            });
+
+            function resetBtnColor() {
+                for (let button of allPartOneBtn) {
+                    button.style.color = "#000";
+                    button.style.backgroundColor = "#d9edff";
+                }
+            }
+        </script>
+    </body>
+</html>
